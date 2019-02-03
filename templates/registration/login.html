@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block content1 %}
-    <link rel="stylesheet" type="text/css" href="static/gpsschool/css/mystyle.css">
-    <script type="text/javascript" src="static/gpsschool/js/myjs.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "gpsschool/css/mystyle.css" %}">
+    <script type="text/javascript" src="{% static "gpsschool/js/myjs.js" %}"></script>
 {% endblock %}
 
 {% block content %}
@@ -18,16 +18,19 @@
             <article class="card-body">
                <a href="" class="float-right btn btn-outline-primary">Sign up</a>
                <h4 class="card-title mb-4 mt-1">Sign in</h4>
-               <form>
+                {% load widget_tweaks %}
+                <form method="post" > {% csrf_token %}
                   <div class="form-group">
-                     <label>Your email</label>
-                     <input name="" class="form-control" placeholder="Email" type="email">
+                     <label>Your </label>
+                      {{ form.username.label_tag }}
+                      {% render_field form.username class="form-control"  placeholder="username" type="text" %}
                   </div>
                   <!-- form-group// -->
                   <div class="form-group">
                      <a class="float-right" href="#">Forgot?</a>
-                     <label>Your password</label>
-                     <input class="form-control" placeholder="******" type="password">
+                     <label>Your </label>
+                      {{ form.username.label_tag }}
+                      {% render_field form.password class="form-control"  placeholder="*******" type="password" %}
                   </div>
                   <!-- form-group// -->
                   <div class="form-group">
