@@ -1,0 +1,199 @@
+{% load static %}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>GPS Chohtan | Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Primary School Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+<link href='{% static "gpsfe/css/bootstrap.css" %}' rel="stylesheet" type="text/css"/>
+<!-- Custom Theme files -->
+<link href='{% static "gpsfe/css/style.css" %}' rel="stylesheet" type="text/css"/>	
+<script src='{% static "gpsfe/js/jquery.min.js" %}'> </script>
+<!--webfonts-->
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic|PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+</head>
+<body>
+	<!----- start-header---->
+			<div id="home" class="header two">
+				<div class="top-header two">	
+						<div class="container">
+						<div class="logo">
+							<a href='{% url "home" %}'><h1>GPS<span>Chohtan</span></h1></a>
+						</div>
+					<!----start-top-nav---->
+							<div class="top-menu">
+
+							<ul class="cl-effect-16">
+								 <li><a class="active" href='{% url "home" %}' data-hover="Home">Home</a></li>
+								<li><a  href='{% url "about" %}' data-hover="About">About</a></li>
+								<li><a href='{% url "teachers" %}' data-hover="Teachers">Teachers</a></li>
+								<li><a href='{% url "gallery" %}' data-hover="Gallery">Gallery</a></li>
+								<li><a href='{% url "blog" %}' data-hover="blog">Blog</a></li>
+								<li><a class="active" href='{% url "contact" %}' data-hover="Contact">Contact</a></li>
+								  <div class="clearfix"></div>
+								</ul>
+							</div>
+							<!-- script-for-menu -->
+								<script>
+									$("span.menu").click(function(){
+										$(".top-menu ul").slideToggle("slow" , function(){
+										});
+									});
+								</script>
+								<!-- script-for-menu -->
+						<div class="clearfix"> </div>
+					</div>
+				</div>
+			    <div class="clearfix"> </div>
+		</div>
+		<!----- //End-slider---->
+	<!--/contact-->
+	 <div class="contact">
+	 	<div class="container">
+					<div class="contact-head">
+							<h3>Contact Us</h3>
+							<p>Keep on tuch with me</p>
+					 </div>
+		<div class="contact-top">
+		     <div class="col-md-4 contact-text">
+				<div class="cont-grid">
+					<div class="con-icon">
+						<i class="loca"> </i>
+					</div>
+					<div class="con-text">
+						<h4>GPS Chohtan</h4>
+						<p>Shree Dungarpuriji Ka Math Building</p>
+						<p>Tankar Pada</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="cont-grid">
+					<div class="con-icon">
+						<i class="net"> </i>
+					</div>
+					<div class="con-text">
+						<h4>Tehsil: Chohtan</h4>
+						<p>District: Barmer</p>
+						<p>Rajasthan</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="cont-grid">
+					<div class="con-icon">
+						<i class="mail"> </i>
+					</div>
+					<div class="con-text">
+						<h4>M@IL US</h4>
+						<p>gpsschool2015@gmail.com</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			     
+			 </div>
+			 <div class="col-md-8 contact-form">
+						<form>
+						<input type="text" class="textbox" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}">
+							<input type="text" class="textbox" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}">
+							<textarea value="Message:" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+							<input type="submit" value="Send Now">
+						</form>
+				</div>
+			  <div class="clearfix"></div>
+		</div>
+	</div>
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3601.6997327549507!2d71.0687150146014!3d25.4816999837646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3945b6f2f945e8cd%3A0x8aead110c33c74c0!2sGENIUS+PUBLIC+SCHOOL+%2CCHOHTAN!5e0!3m2!1sen!2sin!4v1558947727888!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+		 </div>
+
+</div>
+	<!--address-->
+	<div id="contact" class="address">
+		<div class="col-md-7 address-left">
+			 <div class="products">
+				 <h3>Classes</h3>
+				 <ul>
+					 <li><a href="{% url 'blog' %}">Sports</a></li>
+					 <li><a href="{% url 'blog' %}">Music</a></li>
+					 <li><a href="{% url 'blog' %}">Dance</a></li>
+				 </ul>
+			 </div>
+			 <div class="company-adout">
+				 <h3>Learn</h3>
+				 <ul>
+					 <li><a href="{% url 'about' %}">About</a></li>
+					 <li><a href="{% url 'teachers' %}">Teacher</a></li>
+					 <li><a href="{% url 'contact' %}">Contact</a></li>
+				 </ul>
+			 </div>
+			 <div class="clearfix"></div>
+			 <p>Creativity itself doesn't care at all about results - the only thing it craves is the process. 
+				Learn to love the process and let whatever happens next happen,<span>
+				without fussing too much about it</span></p>
+		</div>
+		<div class="col-md-5 address-right">
+			<h3>Our Office</h3>
+			<p>Shree Dungarpuri Ji Ka Math Building</p>
+			<p>Tankar Pada</p>
+			<ul class="bottom">
+				 <li>Near Roadways Bus Stand</li>
+			</ul>
+			<ul>
+				 <li>Tehsil: Chohtan</li>
+				 <li>District: Barmer</li>
+				 <li><a class="mail" href="mailto:gpsschool2015@gmail.com">gpsschool2015@gmail.com</a></li>
+			</ul>
+		</div>
+		 <div class="clearfix"></div>
+	</div>
+	<!--//address-->
+
+		<!----footer--->
+			<div class="footer">
+				<div class="container">
+					<div class="copy">
+		              <p>&copy; 2015 All Rights Reserved Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+		            </div>
+					
+				</div>
+			</div>
+	<!--start-smoth-scrolling-->
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){		
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+								</script>
+							<!--start-smoth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="{% url 'home' %}" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+</body>
+</html>

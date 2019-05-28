@@ -1,0 +1,246 @@
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title><title>GPS Chohtan | About</title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Primary School Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+<link href='{% static "gpsfe/css/bootstrap.css" %}' rel="stylesheet" type="text/css"/>
+<!-- Custom Theme files -->
+<link href='{% static "gpsfe/css/style.css" %}' rel="stylesheet" type="text/css"/>	
+<script src='{% static "gpsfe/js/jquery.min.js" %}'> </script>
+<!--webfonts-->
+<link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic|PT+Sans:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<!--//webfonts-->
+</head>
+<body>
+	<!--start-home-->
+	<!----- start-header---->
+			<div id="home" class="header two">
+					<div class="top-header two">	
+						<div class="container">
+						<div class="logo">
+							<a href='{% url "home" %}'><h1>GPS<span>Chohtan</span></h1></a>
+						</div>
+					<div class="top-menu">
+							<span class="menu"> </span>
+								<ul class="cl-effect-16">
+								 <li><a href='{% url "home" %}' data-hover="Home">Home</a></li>
+								<li><a  class="active" href='{% url "about" %}' data-hover="About">About</a></li>
+								<li><a href='{% url "teachers" %}' data-hover="Teachers">Teachers</a></li>
+								<li><a href='{% url "gallery" %}' data-hover="Gallery">Gallery</a></li>
+								<li><a href='{% url "blog" %}' data-hover="blog">Blog</a></li>
+								<li><a href='{% url "contact" %}' data-hover="Contact">Contact</a></li>
+								  <div class="clearfix"></div>
+								</ul>
+							</div>
+							<!-- script-for-menu -->
+								<script>
+									$("span.menu").click(function(){
+										$(".top-menu ul").slideToggle("slow" , function(){
+										});
+									});
+								</script>
+								<!-- script-for-menu -->
+							<div class="clearfix"> </div>
+					</div>
+				</div>
+			    <div class="clearfix"> </div>
+		</div>
+		<!----- //End-slider---->
+<!---start-slide-bottom--->
+			<div class="about-section">
+				 <div class="container">
+				     <div class="about-head">
+							<h3>About Us</h3>
+							<p>A Few words about us</p>
+					 </div>
+				      	<div class="col-md-5 slide-about">
+									<div class="side">
+										 <div  id="top" class="callbacks_container">
+												<ul class="rslides" id="slider4">
+														<li>
+														<img src="{% static 'gpsfe/images/s1.jpg' %}" class="img-responsive" alt="" />
+														</li>
+														<li>
+														<img src="{% static 'gpsfe/images/s2.jpg' %}" class="img-responsive" alt="" />
+														</li>
+														<li>
+															<img src="{% static 'gpsfe/images/s1.jpg' %}" class="img-responsive" alt="" />
+														</li>
+													 </ul>
+												</div>
+											</div>
+								<script src='{% static "gpsfe/js/responsiveslides.min.js" %}'> </script>
+							 <script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider4").responsiveSlides({
+									auto: true,
+									pager:false,
+									nav: true,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+							
+								});
+							  </script>
+							<!----//End-slider-script---->
+						<div class="clearfix"> </div>
+					</div>
+					<div class="col-md-7 about-text">
+						Group of five concerned friends, who were worried about the medium of education. They were worried about the future of children those who were lacking good quality English education. All of them are well placed in their life so they could have left the topic after gossiping for a while but they have decided to make a difference by doing something concrete. They have dared to take the problem heads on and they have decided to start a new school with crowdfunding and their own sources. They have roamed to almost all villages to Chohtan block to arrange funding for the school. There were so many obstacles but convication, determination and will power of them have given birth to a beautiful school called Genius Public School. 
+
+					</div>
+					<div class="clearfix"></div>
+				 </div>
+			</div>
+       <!---start-about-bottom--->
+		<div class="slide-bottom">
+			<div class="slide-bottom-grids">
+				 <div class="container">
+					 <div class="col-md-6 slide-bottom-grid">
+							<h3>Welcome!</h3>
+							<p>We welcome you to prestigious and one of the first English medium school of our town Chohtan. We are fully determined and dedicated to make our town's education as par as metropolitan cities.</p>
+					 </div>
+					 <div class="col-md-6 slide-bottom-grid">
+					       <h3>Our Mission</h3>
+						   <p>We aim to provide word class education to our students. We had started this school to shape future of our children and make them world leaders. We give personal care to every student. We believe that every child of this world has some special abilities and talents. We try to find out all such abilities and talents through our excellent teaching environment and education.</p>
+					 </div>
+					   <div class="clearfix"></div>
+				 </div>
+			 </div>
+		</div>
+		<div class="member-section">
+			<div class="container">
+				<div class="member-head">
+						<h3>Our Members</h3>
+					   <p>2015 Board Members</p>
+					   </div>
+			      <div class="members">
+					   <div class="col-md-4 member-grids">
+                              <a href="#"> <img src="{% static 'gpsfe/images/m2.jpg' %}" class="img-responsive" alt="" /></a>
+								<h5>President</h5>
+								<h5>Mr. Nand Lal Chouhan</h5>
+								<p>All rounder personality Mr. Chouhan is an educator by heart. He is always available for his students. He is a great father, an innovative farmer, a social activist and many more. He is the current president of Meghmaya Foundation which looks after smooth running of the school.</p>
+							</div>
+							<div class="col-md-4 member-grids">
+								<a href="#"> <img src="{% static 'gpsfe/images/m3.jpg' %}" class="img-responsive" alt="" /></a>
+								<h5>Principal</h5>
+								<h5>Mr. B L Jogal</h5>
+								<p>He is the strongest pillar and a guide to everyone. He carries more than 35 years of experience as a teacher, an educator and an administrator. He is a loved personality by everyone. His guidance enlightens every student and teaher.</p>
+
+							</div>
+							<div class="col-md-4 member-grids">
+								<a href="#"> <img src="{% static 'gpsfe/images/m1.jpg' %}" class="img-responsive" alt="" /></a>
+								<h5>Head Teacher</h5>
+								<h5>Shekh Mohamad</h5>
+								<p>He is a proud alumni of Jawahar Navodaya Vidhyalaya, Pachpadra. He is the current head of our teachers. His passion for teaching and helping children is unparalleled. He has teaching experience of 5 years.</p>
+							</div>
+							<div class="clearfix"> </div>
+					   </div>
+				  </div>
+			</div>
+		</div>
+<!--/mid-bg-->
+	<div class="mid-bg">
+		<div class="container">
+			<div class="mid-section">
+				 <h3>First Day at School!</h3>
+				 <h4>ARE YOU READY ?</h4>
+				 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text  and typesetting industry. Lorem Ipsum has been the industry's standard dummy  ever since the 1500s,</p>
+			</div>
+		</div>
+	</div>
+	<!--address-->
+	<div id="contact" class="address">
+		<div class="col-md-7 address-left">
+			 <div class="products">
+				 <h3>Classes</h3>
+				 <ul>
+					 <li><a href="{% url 'blog' %}">Sports</a></li>
+					 <li><a href="{% url 'blog' %}">Music</a></li>
+					 <li><a href="{% url 'blog' %}">Dance</a></li>
+				 </ul>
+			 </div>
+			 <div class="company-adout">
+				 <h3>Learn</h3>
+				 <ul>
+					 <li><a href="{% url 'about' %}">About</a></li>
+					 <li><a href="{% url 'teachers' %}">Teacher</a></li>
+					 <li><a href="{% url 'contact' %}">Contact</a></li>
+				 </ul>
+			 </div>
+			 <div class="clearfix"></div>
+			 <p>Creativity itself doesn't care at all about results - the only thing it craves is the process. 
+				Learn to love the process and let whatever happens next happen,<span>
+				without fussing too much about it</span></p>
+		</div>
+		<div class="col-md-5 address-right">
+			<h3>Our Office</h3>
+			<p>Shree Dungarpuri Ji Ka Math Building</p>
+			<p>Tankar Pada</p>
+			<ul class="bottom">
+				 <li>Near Roadways Bus Stand</li>
+			</ul>
+			<ul>
+				 <li>Tehsil: Chohtan</li>
+				 <li>District: Barmer</li>
+				 <li><a class="mail" href="mailto:gpsschool2015@gmail.com">gpsschool2015@gmail.com</a></li>
+			</ul>
+		</div>
+		 <div class="clearfix"></div>
+	</div>
+	<!--//address-->
+		<!----footer--->
+			<div class="footer">
+				<div class="container">
+					<div class="copy">
+		              <p>&copy; 2015 All Rights Reserved Design by <a href="http://w3layouts.com/">W3layouts</a> </p>
+		            </div>
+					
+				</div>
+			</div>
+	<!--start-smoth-scrolling-->
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){		
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+								</script>
+							<!--start-smoth-scrolling-->
+						<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+		<a href="{% url 'about' %}" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+
+</body>
+</html>
