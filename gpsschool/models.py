@@ -36,20 +36,12 @@ class Book(models.Model):
         return self.title
 
 
-class Parent(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profession = models.CharField(max_length=120)
-    relation_to_student = models.CharField(max_length=120, default='Father')
-    contact_number = models.IntegerField(null=True, default=0)
-
-    def __str__(self):
-        return ("%s %s" % (self.user.first_name, self.user.last_name)).upper()
-
-
-
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     standard = models.ForeignKey(Standard, on_delete=models.CASCADE)
-    parent = models.ForeignKey(Parent, on_delete=models.CASCADE, related_name='parent_students', null=True)
+    father_name = models.CharField(null=True, max_length=120)
+    mother_name = models.CharField(null=True, max_length=120)
+    contact_number = models.CharField(null=True, max_length=120)
+    address = models.TextField(null=True)
     admission_date = models.DateTimeField(auto_now=True, editable=True)
     roll_number = models.IntegerField(default=0)

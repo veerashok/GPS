@@ -1,15 +1,15 @@
-{% extends 'gpsschool/base.html' %}
-{% load static %}
-
-{% block title %}Home{% endblock %}
-
+{% extends "gpsschool/base.html" %}
 {% block content %}
-{% if user.is_authenticated %}
-  Hi {{ user.username }}!
-    <a href="{% url 'logout' %}">Logout</a>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">login</a>
-{% endif %}
-
-{% endblock %}
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

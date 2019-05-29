@@ -1,13 +1,27 @@
 from django.shortcuts import render
 
+posts = [
+    {
+        'author': 'CoreyMS',
+        'title': 'Blog Post 1',
+        'content': 'First post content',
+        'date_posted': 'August 27, 2018'
+    },
+    {
+        'author': 'Jane Doe',
+        'title': 'Blog Post 2',
+        'content': 'Second post content',
+        'date_posted': 'August 28, 2018'
+    }
+]
+
 
 def home(request):
-    template_name = 'gpsschool/signup.html'
-    context = {}
-    return render(request, template_name, context)
+    context = {
+        'posts': posts
+    }
+    return render(request, 'gpsschool/home.html', context)
 
 
-def profile(request):
-	template_name = 'profiles/profile.html'
-	context = {}
-	return render(request, template_name, context)
+def about(request):
+    return render(request, 'gpsschool/about.html', {'title': 'About'})

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import (Book, Standard, Subject,
-                     Teacher, Student, Parent)
+                     Teacher, Student)
 
 def full_name(obj):
     return ("%s %s" % (obj.user.first_name, obj.user.last_name)).upper()
@@ -16,7 +16,7 @@ def class_strength(obj):
 
 class StudentAdmin(admin.ModelAdmin):
 
-    list_display = (full_name, 'roll_number', 'standard', 'parent', 'admission_date')
+    list_display = (full_name, 'roll_number', 'standard', 'admission_date')
     date_hierarchy = 'admission_date'
 
     search_fields = ['user__first_name', 'user__last_name', 'roll_number']
@@ -41,11 +41,6 @@ class SubjectAdmin(admin.ModelAdmin):
     raw_id_fields = ('standard', 'teacher')
 
 
-class ParentAdmin(admin.ModelAdmin):
-    list_display = (full_name, 'relation_to_student')
-    search_fields = ['user__first_name', 'user__last_name']
-
-
 class StandardAdmin(admin.ModelAdmin):
     list_display = ('name_standard', class_strength)
 
@@ -53,5 +48,3 @@ class StandardAdmin(admin.ModelAdmin):
 admin.site.register(Book)
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Standard, StandardAdmin)
-admin.site.register(Parent, ParentAdmin)
-
