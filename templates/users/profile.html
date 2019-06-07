@@ -12,30 +12,114 @@
 
       <div class="container">
 
-        {% if user_type.teacher %}
+        {% if is_teacher %}
 
-        <h4>Your Personal Details</h4>
+        <h4 class="p-2 mb-4 bg-primary text-white">Personal Details</h4>
 
-        <p class="text-secondary">Your Salary: {{ object.salary }}</p>
+        <div class="row">
+            <div class="col-md-6">
+            <label>Username:</label>
+            </div>
+            <div class="col-md-6">
+            <p>{{ user }}</p>
+            </div>
+        </div>
 
-        <p class="text-left"><strong>Bio: </strong><br>
-          {{ object.bio }}
-        </p>
-        <p class="text-secondary">Your Joining Date: {{ object.joining_date }}</p>
+        <div class="row">
+            <div class="col-md-6">
+            <label>Salary:</label>
+            </div>
+            <div class="col-md-6">
+            <p>{{ user.teacher.salary }}</p>
+            </div>
+        </div>
 
-        {% endif %}
+        <div class="p-3 mb-4 row">
+          <div class="card" style="width:500px">
+            <div class="card-header bg-success">Bio</div>
+            <div class="card-body">{{ user.teacher.bio }}</div> 
+          </div>
+        </div>
 
 
-        {% if user_type.student %}
+        <div class="p-3 mb-4 row">
+          <div class="card" style="width:500px">
+            <div class="card-header bg-success">Address</div>
+            <div class="card-body">{{ user.teacher.address }}</div> 
+          </div>
+        </div>        
 
-        <h4>Your Personal Details</h4>
+        {% else %}
 
-        <p class="text-secondary">Roll Number: {{ object.roll_number }}</p>
-        <p class="text-secondary">Class: {{ object.standard }}</p>
+        <h4 class="p-2 mb-4 bg-primary text-white">Personal Details</h4>
 
-        {% endif %}
+        <div class="row">
+            <div class="col-md-6">
+            <label>Username:</label>
+            </div>
+            <div class="col-md-6">
+            <p>{{ user }}</p>
+            </div>
+        </div>
 
+        <div class="row">
+            <div class="col-md-6">
+            <label>Father's Name</label>
+            </div>
+            <div class="col-md-6">
+            <p>{{ user.student.father_name }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+            <label>Mother's Name</label>
+            </div>
+            <div class="col-md-6">
+            <p>{{ user.student.mother_name }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+            <label>Contact Number</label>
+            </div>
+            <div class="col-md-6">
+            <p>{{ user.student.contact_number }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+            <label>Current Standard</label>
+            </div>
+            <div class="col-md-6">
+            <p>{{ user.student.standard }}</p>
+            </div>
+        </div>
+
+        <div class="p-3 mb-4 row">
+          <div class="card" style="width:500px">
+            <div class="card-header bg-success">Address</div>
+            <div class="card-body">{{ user.student.address }}</div> 
+          </div>
+        </div>
+      {% endif %}
 
       </div>
+
+
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+      </form>
+
     </div>
 {% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "gpsschool/base.html" %}
+{% block content %}
+
+		{% for standard in standards %}
+
+			<div class="list-group">
+				<a href="{% url 'standard-detail' standard.id %}" class="list-group-item list-group-item-action"> {{ standard }}</a>
+			</div>
+
+		{% endfor %}
+
+{% endblock content %}

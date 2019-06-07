@@ -9,8 +9,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'gpsschool/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'gpsschool/css/main.css' %}">
 
     {% if title %}
         <title>GPS Dashboard - {{ title }}</title>
@@ -22,18 +24,23 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">GPS Dashboard</a>
+          <a class="navbar-brand mr-4" href="{% url 'gpsschool-home' %}">GPS Dashboard</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
-              <a class="nav-item nav-link" href="{% url 'blog-about' %}">About</a>
+              <a class="nav-item nav-link" href="{% url 'gpsschool-home' %}">Home</a>
+              <a class="nav-item nav-link" href="{% url 'gpsschool-about' %}">About</a>
+              <a class="nav-item nav-link" href="{% url 'faculty' %}">Teachers</a>
+              <a class="nav-item nav-link" href="{% url 'standards' %}">Standards</a>
+              <a class="nav-item nav-link" href="{% url 'students' %}">Students</a>
+              <a class="nav-item nav-link" href="{% url 'payments' %}"> {% if request.user.is_superuser %} Fees Payment {% endif %}</a>
             </div>
             <!-- Navbar Right Side -->
             <div class="navbar-nav">
               {% if user.is_authenticated %}
+                <a class="nav-item nav-link" href="{% url 'announcement-create' %}">New Announcement</a>
                 <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                 <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
@@ -78,5 +85,8 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
 </body>
 </html>

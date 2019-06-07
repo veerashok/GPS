@@ -40,8 +40,9 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'gpsschool',
     'crispy_forms',
-    'users',
+    'users.apps.UsersConfig',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -133,6 +134,6 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_REDIRECT_URL = 'gpsschool-home'
 LOGIN_URL = 'login'
 

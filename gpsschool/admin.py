@@ -1,6 +1,8 @@
 from django.contrib import admin
 from .models import (Book, Standard, Subject,
-                     Teacher, Student)
+                     Teacher, Student, Location,
+                     Announcement, Task, Payments, PaymentSchedule)
+
 
 def full_name(obj):
     return ("%s %s" % (obj.user.first_name, obj.user.last_name)).upper()
@@ -26,7 +28,6 @@ admin.site.register(Student, StudentAdmin)
 
 
 class TeacherAdmin(admin.ModelAdmin):
-
     list_display = (full_name, 'salary',)
     date_hierarchy = 'joining_date'
     list_editable = ('salary', )
@@ -42,9 +43,27 @@ class SubjectAdmin(admin.ModelAdmin):
 
 
 class StandardAdmin(admin.ModelAdmin):
-    list_display = ('name_standard', class_strength)
+    list_display = ('name_standard', class_strength, 'class_teacher')
+
+
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('task_type', 'date_assigned', 'date_completed', 'score', 'weight', 'standard')
+
+
+class PaymentAdmin(admin.ModelAdmin):
+    list_display = ('amount', 'date')
+
+
+class PaymentScheduleAdmin(admin.ModelAdmin):
+    list_display = ('yearly_cost', 'payment_schedule', 'scholarship_type', 'scholarship_amount')
+
 
 
 admin.site.register(Book)
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Standard, StandardAdmin)
+admin.site.register(Location)
+admin.site.register(Announcement)
+admin.site.register(Task, TaskAdmin)
+admin.site.register(Payments, PaymentAdmin)
+admin.site.register(PaymentSchedule, PaymentScheduleAdmin)
