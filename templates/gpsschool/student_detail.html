@@ -43,8 +43,71 @@
 	                                </li>
 	                            </ul>
 	                        </div>
+
+	                        <div class="container"> <!-- Container for payment history starts here.-->
+		                        <div class="panel-group" id="accordion">
+
+								  <div class="panel panel-default">
+								    <div class="panel-heading">
+								      <h4 class="panel-title">
+								        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+								        	Fees Payment History
+								        </a>
+								      </h4>
+								    </div>
+
+								    {% if request.user.is_superuser %}
+
+								    <div id="collapseThree" class="panel-collapse collapse">
+								      <div class="panel-body">
+								      	<h5>Total amount to be paid(INR): {{ student.account.yearly_cost}}</h5>
+								      	<hr>
+								      		<div class="container">
+												  <h5>List of transactions</h2>            
+												  <table class="table table-bordered">
+												    <thead>
+												      <tr>
+												        <th>Date</th>
+												        <th>Amount</th>
+												        <th>Comment</th>
+												      </tr>
+												    </thead>
+												    <tbody>
+
+												    {% for transaction in student.account.transactions.all %}
+												      <tr>
+												        <td>{{ transaction.date }}</td>
+												        <td>{{ transaction.amount }}</td>
+												        <td>{{ transaction.comment }}</td>
+												      </tr>
+												    {% endfor %}
+												    </tbody>
+												  </table>
+												</div>
+											</div>
+								    </div>
+								    {% endif %}
+
+								  </div>
+
+								</div>
+							</div> <!-- Container for payment history ends here -->
+
+							<div class="container">
+								<h5>Progress Report</h5>
+
+								<div class="container"><hr>
+
+									{% for mark in student.task_set.all %}
+										<p>{{ mark.subject.name_subject }} {{ mark.task_type }} : {{ mark.score }} out of {{ mark.maximum_score }}</p>
+									{% endfor %}
+
+								</div>
+							
+							</div>
+
 	                    </div>
-	                    <!--/row-->
+	  	                    <!--/row-->
 	                </div>
 	                <!--/card-block-->
 	            </div>

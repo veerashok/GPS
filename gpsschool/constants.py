@@ -20,7 +20,7 @@ PAYMENT_SCHEDULES = (
 
 SCHOLARSHIP_CHOICES = (
     ('00', 'None'),
-    ('01', 'First type'),
+    ('01', 'RTE'),
     ('02', 'Second type'),
     ('03', 'Third type'),
 )

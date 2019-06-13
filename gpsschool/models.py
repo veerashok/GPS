@@ -143,7 +143,9 @@ class Task(models.Model):
     score = models.FloatField(default=0)
     maximum_score = models.FloatField(default=0)
     weight = models.FloatField(default=0)
-    standard = models.ForeignKey(Standard, on_delete=models.CASCADE)
+    standard = models.ForeignKey(Standard, on_delete=models.CASCADE, null=True)
+    student = models.ForeignKey(Student, on_delete=models.SET_NULL, null=True)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, null=True)
 
     def __str__(self):
         i = 0

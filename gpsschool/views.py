@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User
+from django.db.models import Sum
 from django.views.generic import (
     ListView,
     DetailView,
@@ -11,7 +12,7 @@ from django.views.generic import (
 from .models import (
     Announcement, Teacher,
     Standard, Student,
-    PaymentSchedule
+    PaymentSchedule, Payments
 )
 
 
@@ -20,6 +21,7 @@ def home(request):
         'posts': Announcement.objects.all()
     }
     return render(request, 'gpsschool/home.html', context)
+    
 
 class PaymentScheduleListView(LoginRequiredMixin, ListView):
     model = PaymentSchedule
@@ -28,7 +30,18 @@ class PaymentScheduleListView(LoginRequiredMixin, ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
-        context['fees_deposited'] = 1000
+        list_of_sums = [ ]
+        
+        qs = PaymentSchedule.objects.all()
+
+        for q in qs:
+            payments = q.transactions.all()
+            sum = 0 
+            for payment  in payments:
+                sum += payment.amount
+            list_of_sums.append(sum)
+
+        context['fees_deposited'] = list_of_sums
         return context
 
 class StudentListView(LoginRequiredMixin, ListView):

@@ -1,4 +1,5 @@
 {% extends "gpsschool/base.html" %}
+{% load index %}
 {% block content %}
 	<div class="container">
 			<h3>Fee Status List</h3>
@@ -9,7 +10,7 @@
 			      <th scope="th-sm">Full Name</th>
 			      <th scope="th-sm">Yearly Cost</th>
 			      <th scope="th-sm">Payment Schedule</th>
-			      <th scope="th-sm">Transactions</th>
+			      <th scope="th-sm">Fee Deposited</th>
 			    </tr>
 			  </thead>
 			  <tbody>
@@ -20,7 +21,7 @@
 			      <td><a href="{% url 'student-detail' payment.student.id %}"> {{ payment.student }} </a></td>
 			      <td>{{ payment.yearly_cost }}</td>
 			      <td>{{ payment.payment_schedule }}</td>
-			      <td>{{ payment.transactions.all }}</td>
+			      <td>{{ fees_deposited|index:forloop.counter0 }}</td>
 			    </tr>
 			{% endfor %}
 

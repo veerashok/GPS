@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'gpsschool',
     'crispy_forms',
     'users.apps.UsersConfig',
+    'django_admin_listfilter_dropdown',
+    'django_twilio',
 ]
 
 
@@ -137,3 +139,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 LOGIN_REDIRECT_URL = 'gpsschool-home'
 LOGIN_URL = 'login'
 
+TWILIO_ACCOUNT_SID = 'AC31ed2a36e7b0aaca674d68d164dd0102'
+TWILIO_AUTH_TOKEN = '73a5f4df89d57ff43ed15a38b076c277'
