@@ -20,8 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'sdm^wwy(hx*2*ozn4(!iwl0wcon+hny^d&woz5%sstmr_ff!pz'
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'sdm^wwy(hx*2*ozn4(!iwl0wcon+hny^d&woz5%sstmr_ff!pz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -91,9 +90,7 @@ WSGI_APPLICATION = 'GPS.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=config('DATABASE_URL')
-    )
+    'default': 'postgresql-concentric-56606'
 }
 
 
